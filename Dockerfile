@@ -13,6 +13,6 @@ RUN mkdir -p /home/tstarr/.local/share/chezmoi
 COPY --chown=tstarr:users . ./home/tstarr/.local/share/chezmoi
 WORKDIR /home/tstarr/.local/share/chezmoi
 
-RUN ls /home/tstarr/.local/share/chezmoi
+RUN pwd .
 
 ENTRYPOINT ["sh", "docker-entrypoint.sh"]
