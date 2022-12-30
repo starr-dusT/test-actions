@@ -1,15 +1,17 @@
-on: [push]
+name: dotfiles
+on: push
 
 jobs:
-  hello_world_job:
+  void:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: actions/hello-world-docker-actionv2
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.4.1
         with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          access_token: ${{ github.token }}
+      - uses: actions/checkout@v2
+      - name: Pull docker image
+        run: docker-compose pull
+
+      - name: Run installer on Void
+        run: docker-compose up --build --exit-code-from dotfiles
