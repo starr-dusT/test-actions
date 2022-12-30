@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "lol!"
-exit 10
+exit 0
