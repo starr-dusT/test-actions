@@ -1,7 +1,7 @@
 FROM ghcr.io/void-linux/void-linux:20210220rc01-full-x86_64   
 MAINTAINER starr-dusT <starrtyler88@gmail.com>
 
-RUN ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+RUN export SSL_NO_VERIFY_PEER=1
 RUN xbps-install -Syu -y
 
 RUN useradd tstarr
