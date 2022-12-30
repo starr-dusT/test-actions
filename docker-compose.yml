@@ -5,6 +5,6 @@ services:
       - CI=1
     build: .
     container_name: dotfiles
-    image: starr-dusT/dotfiles
+    image: starr-dust/dotfiles
     volumes:
       - .:/usr/src/
