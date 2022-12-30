@@ -9,8 +9,10 @@ RUN echo 'tstarr ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER tstarr
 
-#RUN mkdir -p /home/tstarr/.local/share/chezmoi
-#COPY --chown=tstarr:users . ./home/tstarr/.local/share/chezmoi
-#WORKDIR /home/tstarr/.local/share/chezmoi
+RUN mkdir -p /home/tstarr/.local/share/chezmoi
+COPY --chown=tstarr:users . ./home/tstarr/.local/share/chezmoi
+WORKDIR /home/tstarr/.local/share/chezmoi
+
+RUN ls /home/tstarr/.local/share/chezmoi
 
 ENTRYPOINT ["sh", "docker-entrypoint.sh"]
