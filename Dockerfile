@@ -1,7 +1,7 @@
-FROM ghcr.io/void-linux/void-linux
+FROM voidlinux/voidlinux
 MAINTAINER starr-dusT <starrtyler88@gmail.com>
 
-RUN xbps-install -Syu -y
+RUN xbps-install -u xbps -y
 RUN xbps-install -Syu -y
 
 RUN useradd -ms /bin/bash tstarr
