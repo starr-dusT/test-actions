@@ -3,6 +3,7 @@ MAINTAINER starr-dusT <starrtyler88@gmail.com>
 
 RUN SSL_NO_VERIFY_PEER=true xbps-install -Su xbps -y
 RUN SSL_NO_VERIFY_PEER=true xbps-install -Syu -y
+RUN xbps-install -S bash -y
 
 RUN useradd tstarr
 RUN gpasswd -a tstarr wheel
