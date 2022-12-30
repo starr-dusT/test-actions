@@ -1,4 +1,4 @@
-FROM voidlinux
+FROM voidlinux/voidlinux
 MAINTAINER starr-dusT <starrtyler88@gmail.com>
 
 RUN xbps-install -Syu -y
