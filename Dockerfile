@@ -1,7 +1,8 @@
 FROM ghcr.io/void-linux/void-linux:20210220rc01-full-x86_64   
 MAINTAINER starr-dusT <starrtyler88@gmail.com>
 
-RUN SSL_NO_VERIFY_PEER=true xbps-install -Syu -y
+RUN SSL_NO_VERIFY_PEER=true xbps-install -Su -y
+RUN xbps-install -u xbps -y
 
 RUN useradd tstarr
 RUN gpasswd -a tstarr wheel
