@@ -1,7 +1,7 @@
 FROM ghcr.io/void-linux/void-linux:latest-full-x86_64 
 MAINTAINER starr-dusT <starrtyler88@gmail.com>
 
-RUN xbps-install -Syu -y
+RUN xbps-install -Su xbps -y
 RUN xbps-install -S bash -y
 
 RUN useradd tstarr
